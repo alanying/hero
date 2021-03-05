@@ -1,2 +1,10 @@
-<h1>Create a team</h1>
-<p>this page let you create your own team</p>
+<div class="card" style="width: 18rem;">
+  <%# <div class="card-header">Generate a new Hero</div> %>
+  <%= link_to "Generate a new Hero", root_path, class: 'card-header' %>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">An item</li>
+  </ul>
+  <%# <div class="card-footer text-muted">Create a new Hero team</div> %>
+  <%= link_to "Create a new Hero team", home_team_path, class: 'card-footer text-muted' %>
+</div>
+
