@@ -2,7 +2,10 @@
   <%# <div class="card-header">Generate a new Hero</div> %>
   <%= link_to "Generate a new Hero", root_path, class: 'card-header' %>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item">An item</li>
+    <li class="list-group-item">
+      Hero's name: <%= @hero_prefix + ' ' + @hero_name %> <br/>
+      Hero's power: <%= @hero_power %> <br/>
+    </li>
   </ul>
   <%# <div class="card-footer text-muted">Create a new Hero team</div> %>
   <%= link_to "Create a new Hero team", home_team_path, class: 'card-footer text-muted' %>

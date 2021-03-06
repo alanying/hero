@@ -1,8 +1,22 @@
-<div class="card" style="width: 18rem;">
+<div class="card" ">
   <%# <div class="card-header">Generate a new Hero</div> %>
   <%= link_to "Generate a new Hero", root_path, class: 'card-header' %>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item">An item</li>
+    <li class="list-group-item">
+      Image: <br/>
+      <% @hero_image %> <br/>
+      Hero Name: <br/>
+      <%= @hero_name %> <br/>
+      Hero Power: <br/> 
+      <%= @hero_power %> <br/>
+      <br/>
+      Undercover Company: <br/> 
+      <%= @hero_company %> <br/>
+      Undercover Profession: <br/> 
+      <%= @hero_profession %> <br/>
+      Undercover Ability: <br/> 
+      <%= @hero_ability %> <br/>
+    </li>
   </ul>
   <%# <div class="card-footer text-muted">Create a new Hero team</div> %>
   <%= link_to "Create a new Hero team", home_team_path, class: 'card-footer text-muted' %>
