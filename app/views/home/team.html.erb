@@ -1,13 +1,19 @@
-<div class="card" style="width: 18rem;">
-  <%# <div class="card-header">Generate a new Hero</div> %>
-  <%= link_to "Generate a new Hero", root_path, class: 'card-header' %>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">
-      Hero's name: <%= @hero_prefix + ' ' + @hero_name %> <br/>
-      Hero's power: <%= @hero_power %> <br/>
-    </li>
-  </ul>
-  <%# <div class="card-footer text-muted">Create a new Hero team</div> %>
-  <%= link_to "Create a new Hero team", home_team_path, class: 'card-footer text-muted' %>
-</div>
-
+<% if @team_num == 0 %>
+  <div class="card" >
+    <p class="card-header fw-bold">How many hero do we need? <%= @team_num +1 %> </p>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        <%= form_with url: home_team_path, method: :post do |form| %>
+          <p> <%= form.select :team_num, [1,2,3,4,5,6,7,8,9,10] %> </p>
+          <p> <%= form.submit "Let's build this team!", class:"btn btn-success btn-sm" %> </p>
+        <% end %>
+      </li>
+    </ul>
+    <%# <div class="card-footer text-muted">Create a new Hero team</div> %>
+    <%= link_to "Create a new Hero team", home_team_path, class: 'card-footer text-muted' %>
+  </div>
+<% else %>
+  <% @team_num.times do %>
+    <%= render 'home/hero_card' %>
+  <% end %>
+<% end %>

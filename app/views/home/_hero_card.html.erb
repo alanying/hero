@@ -1,0 +1,22 @@
+<ul class="list-group list-group-flush">
+    <li class="list-group-item">
+      <div class="card mb-3">
+        <div class="row g-0">
+          <div class="col-md-4"> <img src="<%= @hero_image %>" alt="Unclassified"></div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <% @hero_image %>
+              <h2 class="card-title">Hero Name: <br/><span class="text-info"> <%= @hero_name %> </span></h2>
+              <h3 class="card-text">Hero Power: <br/><span class="text-info"> <%= @hero_power %> </span></h3>
+              <br/><br/>
+              <h5 class="card-text"><small class="text-muted">
+                Undercover Company: <br/><span class="text-info"> <%=@hero_company%> </span><br/>
+                Undercover Profession: <br/><span class="text-info"> <%=@hero_profession%> </span><br/>
+                Undercover Ability: <br/><span class="text-info"> <%=@hero_ability%> </span><br/>
+              </small></h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>

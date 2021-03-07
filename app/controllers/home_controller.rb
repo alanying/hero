@@ -3,7 +3,15 @@ class HomeController < ApplicationController
 
   def var
     @name='BigAl'
-    @hero_image = Faker::Avatar.image(slug: "my-own-slug", size: "50x50", format: "jpg") 
+    @random_image_num = rand(1..1000)
+    @random_set_num = rand(1..5)
+    @random_bg_num = [1,2].sample
+    @hero_image = Faker::Avatar.image(
+      slug: @random_image_num, 
+      size: "300x300", 
+      format: "png", 
+      set: "set#{@random_set_num}",
+      bgset: "bg#{@random_bg_num}") 
     @hero_name = Faker::Superhero.prefix + ' ' + Faker::Superhero.name
     @hero_power = Faker::Superhero.power
     @hero_company = Faker::Company.name + ' ' + Faker::Company.suffix + ' (' + Faker::Company.industry + ')'
@@ -16,5 +24,9 @@ class HomeController < ApplicationController
   end
   
   def team
+    @team_num = params[:team_num].to_i
+    if @team_num > 0
+      
+    end
   end
 end
